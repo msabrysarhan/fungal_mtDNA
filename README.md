@@ -1,4 +1,5 @@
 ```markdown
+
 # FASTQ Processing Pipeline
 
 This script automates the processing of FASTQ files for genomic data analysis. It performs the following steps:
@@ -26,9 +27,11 @@ The script can be run with either an accession number or pre-existing FASTQ file
 
 ### 1. Using an Accession Number
 
+
 ```bash
 python script.py --accession SRR123456 --sample_name sample1 --output /path/to/output --threads 4
 ```
+
 
 - `--accession`: Accession number for downloading reads.
 - `--sample_name`: Name of the sample (optional, defaults to the accession number).
