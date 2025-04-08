@@ -1,6 +1,4 @@
 
-# FASTQ Processing Pipeline
-
 This script automates the processing of FASTQ files for Mito genomic data analysis. It performs the following steps:
 
 1. **Tool Check**: Ensures required tools are installed and executable.
