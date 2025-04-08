@@ -1,8 +1,7 @@
-```markdown
 
 # FASTQ Processing Pipeline
 
-This script automates the processing of FASTQ files for genomic data analysis. It performs the following steps:
+This script automates the processing of FASTQ files for Mito genomic data analysis. It performs the following steps:
 
 1. **Tool Check**: Ensures required tools are installed and executable.
 2. **Read Download**: Downloads FASTQ files using an accession number.
@@ -61,4 +60,4 @@ After running the script, the output directory will contain:
 - SPAdes assembly output in a subdirectory (`spades_sample_name`).
 
 
-```
+
