@@ -38,8 +38,8 @@ def download_reads(accession, output_dir, sample_name, threads, log_file):
             print(f"Step 2: Downloading reads for accession {accession}... OK")
             f.write(f"Step 2: Downloading reads for accession {accession}... OK\n")
         except subprocess.CalledProcessError as e:
-            print(f"Step 2: Downloading reads for accession {accession}... Error: fasterq-dump failed with exit code {e.returncode}")
-            f.write(f"Step 2: Downloading reads for accession {accession}... Error: fasterq-dump failed with exit code {e.returncode}\n")
+            print(f"Step 2: Downloading reads for accession {accession}... Error: fastq-dl failed with exit code {e.returncode}")
+            f.write(f"Step 2: Downloading reads for accession {accession}... Error: fastq-dl failed with exit code {e.returncode}\n")
             sys.exit(1)
 
     return fastq1_file, fastq2_file
