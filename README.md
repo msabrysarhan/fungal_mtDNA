@@ -1,4 +1,4 @@
-# SRA2MITO
+# sra2mito: Automating Fungal Mitochondrial Genome Assembly from SRA Data
 
 This script processes SRA accession (INSDC) to sequence mitochondrial fungal genomes.
 
