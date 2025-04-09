@@ -1,6 +1,4 @@
-# sra2mito: Automating Fungal Mitochondrial Genome Assembly from SRA Data
-
-This script processes SRA accession (INSDC) to sequence mitochondrial fungal genomes.
+This script `sra2mito.py` processes SRA accession, performs adapter trimming, sub-sampling, and de novo assembly.
 
 1. **Tool Check**: Ensures required tools are installed and executable.
 2. **Read Download**: Downloads FASTQ files using an accession number.
@@ -10,7 +8,7 @@ This script processes SRA accession (INSDC) to sequence mitochondrial fungal gen
 
 ## Requirements
 
-The script requires the following tools:
+The script requires the following tools to be installed and excutable:
 
 - `fastq-dl`
 - `fastp`
@@ -20,12 +18,10 @@ The script requires the following tools:
 
 
 ## Usage
-Help Command
 To see the usage and options, run:
 ```bash
-python3 sra2mito.py -h
+python sra2mito.py -h
 ```
-This will display:
 
 ```markdown 
 usage: sra2mito.py [-h] [--accession ACCESSION] [--fastq1 FASTQ1]
@@ -56,7 +52,7 @@ The script can be run with either an accession number or pre-existing FASTQ file
 
 
 ```bash
-python sra2mito.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output /output_directory --threads 4
+python sra2mito.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output output_directory/ --threads 4
 ```
 
 
@@ -68,12 +64,12 @@ python sra2mito.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output /
 ### 2. Using Existing FASTQ Files
 
 ```bash
-python sra2mito.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fastq.gz --sample_name mlp_98AG31_v1 --output /output_directory --threads 4
+python sra2mito.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fastq.gz --sample_name mlp_98AG31_v1 --output output_directory --threads 4
 ```
 
 - `--fastq1`: Path to the first FASTQ file.
 - `--fastq2`: Path to the second FASTQ file.
-- `--sample_name`: Name of the sample (optional, defaults to "unknown_sample").
+- `--sample_name`: Name of the sample (optional, defaults to "sample").
 - `--output`: Directory to store output files.
 - `--threads`: Number of threads to use (default: 1).
 
