@@ -106,7 +106,7 @@ def run_spades(sampled_fastq1, sampled_fastq2, sample_name, output_dir, threads,
     return spades_output_dir
 
 def main():
-    parser = argparse.ArgumentParser(description="My awesome script")
+    parser = argparse.ArgumentParser(description="A pipeline for generating fungal mitochondrial genome sequences from SRA data.")
 
     parser.add_argument("--accession", "-a", help="Accession number")
     parser.add_argument("--fastq1", "-f1", help="FASTQ file 1")
@@ -142,7 +142,7 @@ def main():
     # Handle accession or FASTQ files
     if args.accession:
         if args.fastq1 or args.fastq2:
-            print("Error: Both accession and FASTQ files cannot be provided.")
+            print("Error: You cannot provide both an SRA accession number and FASTQ files. Please choose one input method.")
             with open(log_file, 'a') as f:
                 f.write("Error: Both accession and FASTQ files cannot be provided.\n")
             sys.exit(1)
@@ -154,7 +154,7 @@ def main():
             with open(log_file, 'a') as f:
                 f.write("Error: Both FASTQ files must be provided.\n")
             sys.exit(1)
-        sample_name = args.sample_name if args.sample_name else "unknown_sample"
+        sample_name = args.sample_name if args.sample_name else "default_sample"
         fastq1, fastq2 = args.fastq1, args.fastq2
 
         # Check if FASTQ files are in the output directory
@@ -192,7 +192,7 @@ def main():
     print("Sampled FASTQ file 2:", sampled_fastq2)
     print("SPAdes output directory:", spades_output_dir)
 
-    # Add your script logic here
+    
 
 if __name__ == "__main__":
     main()
