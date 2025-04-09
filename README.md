@@ -1,4 +1,4 @@
-# SRA2mito
+# sra2mito
 
 This script processes SRA accession (INSDC) to sequence mitochondrial fungal genomes.
 
