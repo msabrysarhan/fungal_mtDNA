@@ -20,6 +20,35 @@ The script requires the following tools:
 
 
 ## Usage
+Help Command
+To see the usage and options, run:
+```bash
+python3 sra2mito.py -h
+```
+This will display:
+
+```markdown 
+usage: sra2mito.py [-h] [--accession ACCESSION] [--fastq1 FASTQ1]
+                   [--fastq2 FASTQ2] [--sample_name SAMPLE_NAME] --output
+                   OUTPUT [--threads THREADS]
+
+A pipeline for generating fungal mitochondrial genome sequences from SRA data.
+
+options:
+  -h, --help            show this help message and exit
+  --accession ACCESSION, -a ACCESSION
+                        Accession number
+  --fastq1 FASTQ1, -f1 FASTQ1
+                        FASTQ file 1
+  --fastq2 FASTQ2, -f2 FASTQ2
+                        FASTQ file 2
+  --sample_name SAMPLE_NAME, -n SAMPLE_NAME
+                        Sample name
+  --output OUTPUT, -o OUTPUT
+                        Output directory
+  --threads THREADS, -t THREADS
+                        Number of threads
+```
 
 The script can be run with either an accession number or pre-existing FASTQ files. Below are examples for both scenarios.
 
