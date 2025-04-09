@@ -1,5 +1,6 @@
+# SRA2mito
 
-This script automates the processing of FASTQ files for Mito genomic data analysis. It performs the following steps:
+This script processes SRA accession (INSDC) to sequence mitochondrial fungal genomes.
 
 1. **Tool Check**: Ensures required tools are installed and executable.
 2. **Read Download**: Downloads FASTQ files using an accession number.
@@ -9,7 +10,7 @@ This script automates the processing of FASTQ files for Mito genomic data analys
 
 ## Requirements
 
-The script requires the following tools to be installed and accessible in your `PATH`:
+The script requires the following tools:
 
 - `fastq-dl`
 - `fastp`
@@ -26,7 +27,7 @@ The script can be run with either an accession number or pre-existing FASTQ file
 
 
 ```bash
-python script.py --accession SRR123456 --sample_name sample1 --output /path/to/output --threads 4
+python sra2mito.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output /output_directory --threads 4
 ```
 
 
@@ -38,7 +39,7 @@ python script.py --accession SRR123456 --sample_name sample1 --output /path/to/o
 ### 2. Using Existing FASTQ Files
 
 ```bash
-python script.py --fastq1 /path/to/sample1_1.fastq.gz --fastq2 /path/to/sample1_2.fastq.gz --sample_name sample1 --output /path/to/output --threads 4
+python sra2mito.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fastq.gz --sample_name mlp_98AG31_v1 --output /output_directory --threads 4
 ```
 
 - `--fastq1`: Path to the first FASTQ file.
