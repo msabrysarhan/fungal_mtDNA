@@ -154,7 +154,7 @@ def main():
             with open(log_file, 'a') as f:
                 f.write("Error: Both FASTQ files must be provided.\n")
             sys.exit(1)
-        sample_name = args.sample_name if args.sample_name else "default_sample"
+        sample_name = args.sample_name if args.sample_name else "sample"
         fastq1, fastq2 = args.fastq1, args.fastq2
 
         # Check if FASTQ files are in the output directory
