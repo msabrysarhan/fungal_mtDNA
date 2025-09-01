@@ -1,4 +1,4 @@
-This script `sra2mito.py` processes SRA accession, performs adapter trimming, sub-sampling, and de novo assembly.
+This script `assemble_SRA.py` processes SRA accession, performs adapter trimming, sub-sampling, and de novo assembly.
 
 1. **Tool Check**: Ensures required tools are installed and executable.
 2. **Read Download**: Downloads FASTQ files using an accession number.
@@ -20,15 +20,15 @@ The script requires the following tools to be installed and excutable:
 ## Usage
 To see the usage and options, run:
 ```bash
-python sra2mito.py -h
+python assemble_SRA.py -h
 ```
 
 ```markdown 
-usage: sra2mito.py [-h] [--accession ACCESSION] [--fastq1 FASTQ1]
+usage: assemble_SRA.py [-h] [--accession ACCESSION] [--fastq1 FASTQ1]
                    [--fastq2 FASTQ2] [--sample_name SAMPLE_NAME] --output
                    OUTPUT [--threads THREADS]
 
-A pipeline for generating fungal mitochondrial genome sequences from SRA data.
+A pipeline for downloading and performing de novo assembly of SRA data.
 
 options:
   -h, --help            show this help message and exit
@@ -52,7 +52,7 @@ The script can be run with either an accession number or pre-existing FASTQ file
 
 
 ```bash
-python sra2mito.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output output_directory/ --threads 4
+python assemble_SRA.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output output_directory/ --threads 4
 ```
 
 
@@ -64,7 +64,7 @@ python sra2mito.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output o
 ### 2. Using Existing FASTQ Files
 
 ```bash
-python sra2mito.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fastq.gz --sample_name mlp_98AG31_v1 --output output_directory --threads 4
+python assemble_SRA.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fastq.gz --sample_name mlp_98AG31_v1 --output output_directory --threads 4
 ```
 
 - `--fastq1`: Path to the first FASTQ file.
