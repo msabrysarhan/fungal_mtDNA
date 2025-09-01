@@ -1,4 +1,4 @@
-This script `assemble_SRA.py` processes SRA accession, performs adapter trimming, sub-sampling, and de novo assembly.
+This script `assembly_workflow.py` processes SRA accession, performs adapter trimming, sub-sampling, and de novo assembly.
 
 1. **Tool Check**: Ensures required tools are installed and executable.
 2. **Read Download**: Downloads FASTQ files using an accession number.
@@ -20,11 +20,11 @@ The script requires the following tools to be installed and excutable:
 ## Usage
 To see the usage and options, run:
 ```bash
-python assemble_SRA.py -h
+python assembly_workflow.py -h
 ```
 
 ```markdown 
-usage: assemble_SRA.py [-h] [--accession ACCESSION] [--fastq1 FASTQ1]
+usage: assembly_workflow.py [-h] [--accession ACCESSION] [--fastq1 FASTQ1]
                    [--fastq2 FASTQ2] [--sample_name SAMPLE_NAME] --output
                    OUTPUT [--threads THREADS]
 
@@ -52,7 +52,7 @@ The script can be run with either an accession number or pre-existing FASTQ file
 
 
 ```bash
-python assemble_SRA.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output output_directory/ --threads 4
+python assembly_workflow.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --output output_directory/ --threads 4
 ```
 
 
@@ -65,7 +65,7 @@ python assemble_SRA.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --outp
 
 
 ```bash
-python assemble_SRA.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fastq.gz --sample_name mlp_98AG31_v1 --output output_directory --threads 4
+python assembly_workflow.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fastq.gz --sample_name mlp_98AG31_v1 --output output_directory --threads 4
 ```
 
 - `--fastq1`: Path to the first FASTQ file.
