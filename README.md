@@ -63,6 +63,7 @@ python assemble_SRA.py --accession SRR4063847 --sample_name mlp_98AG31_v1 --outp
 
 ### 2. Using Existing FASTQ Files
 
+
 ```bash
 python assemble_SRA.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fastq.gz --sample_name mlp_98AG31_v1 --output output_directory --threads 4
 ```
@@ -74,7 +75,7 @@ python assemble_SRA.py --fastq1 SRR4063847_1.fastq.gz --fastq2 SRR4063847_2.fast
 - `--threads`: Number of threads to use (default: 1).
 
 
-## Example Output
+### Example Output
 
 After running the script, the output directory will contain:
 
@@ -83,5 +84,17 @@ After running the script, the output directory will contain:
 - Quality control reports (`*_trimmed.json`, `*_trimmed.html`).
 - SPAdes assembly output in a subdirectory (`spades_sample_name`).
 
+### 3. Extract Mitogenome with GetOrganelle
+
+This step uses the [**GetOrganelle**](https://github.com/Kinggerm/GetOrganelle) toolkit to recover complete circular fungal mitochondrial genomes. 
+
+```bash
+get_organelle_from_assembly.py -g spades_sample_name/assembly_graph.fastg -F fungus_mt -o getorganelle_out -t 4
+```
+### Example Output
+
+
+- `final_assembly.fasta`→ the assembled fungal mitochondrial genome (often complete circular).
+- `final_graph.gfa`→ the extracted organelle assembly graph (can be visualized with [Bandage](https://rrwick.github.io/Bandage/)).  
 
 
