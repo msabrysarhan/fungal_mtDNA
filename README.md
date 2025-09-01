@@ -93,8 +93,7 @@ get_organelle_from_assembly.py -g spades_sample_name/assembly_graph.fastg -F fun
 ```
 ### Example Output
 
-
-- `final_assembly.fasta`→ the assembled fungal mitochondrial genome (often complete circular).
-- `final_graph.gfa`→ the extracted organelle assembly graph (can be visualized with [Bandage](https://rrwick.github.io/Bandage/)).  
+- `final_assembly.fasta`→ the assembled fungal mitochondrial genome.
+- `*_complete.graph1.selected_graph.gfa`→ the extracted organelle assembly graph (can be visualized with [Bandage](https://rrwick.github.io/Bandage/)).  
 
 
